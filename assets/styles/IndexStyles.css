@@ -111,8 +111,7 @@
     margin: 10px 20px 10px 0px;
     max-width: 500px;
     padding: 20px;
-    border: 1px solid var(--color-white-secundario);
-    border-radius: 5px;
+
 }
 .FormCalc
 {
@@ -120,52 +119,38 @@
     margin-bottom: 10px;
     font-weight: bold;
 }
-.FormCalc input[type="text"],
-input[type="email"],
-textarea {
-  width: 235px;
-  padding: 10px;
-  border: 1px solid var(--color-white-secundario);
-  border-radius: 3px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  line-height: 1;
-}
-.FormCalc select {
-    width: 255px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--color-white-secundario);
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--color-grey);
-    background-color: var(--color-white);
-  }
-  .FormCalc input[type=number] {
-    width: 235px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--color-white-secundario);
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--color-grey);
-    background-color: var(--color-white);
-  }
+
   .AddDataButton input[type="button"] {
-    background-color: var(--color-success);
-    border: none;
-    color: var(--color-white);
-    padding: 15px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 2px;
-    cursor: pointer;
-    border-radius: 5px;
+    background-color: var(--color-success) ;
   }
   
   .AddDataButton input[type="button"]:hover {
-    background-color: var(--color-success-black);
+    background-color: var(--color-success-dark);
+  }
+.formSection  input[type="text"],
+input[type="email"],
+textarea {
+    width: 195px;
+}
+select
+{
+    width: 217px;
+}
+
+  /*diseño de tabla*/
+  .TableData {
+    border-collapse: collapse;
+    width: 557px;
   }
   
+  .TableData th,
+  .TableData td {
+    padding: 8px;
+    text-align: left;
+    background-color: var(--color-white-secundario);
+  }
+  
+  .TableData th {
+    background-color: var(--color-secundario);
+    color: var(--color-white);
+  }

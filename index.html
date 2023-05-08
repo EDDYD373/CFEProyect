@@ -1,163 +1,174 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Cálculo de material</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="./assets/styles/IndexStyles.css" />
-    
-    <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″/>
-    
+
+    <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
-    
+
 </head>
+
 <body>
     <!-- Aqui se crea la barra de navegacion -->
-    <header class = "Header">
-        <div class = "container_img">
+    <header class="Header">
+        <div class="container_img">
             <a href="https://www.cfe.mx/Pages/default.aspx" target="_blank">
-            <img src="assets/img/cfe.png" alt="Comisión Federal de Electricidad.">
-            </a>        
+                <img src="assets/img/cfe.png" alt="Comisión Federal de Electricidad.">
+            </a>
         </div>
         <nav class="navMenu">
-                <a class="navLink" href="index.html">Cál. Material</a>
-                <a class="navLink" href="consultas.html">Consultas</a>
-                <a class="navLink" href="dispositivos.html">Dispositivos</a>
+            <a class="navLink" href="index.html">Cál. Material</a>
+            <a class="navLink" href="consultas.html">Consultas</a>
+            <a class="navLink" href="dispositivos.html">Dispositivos</a>
         </nav>
         <div class="buttonHeader">
-            <a href="#" >Carpeta de Archivos</a>
+            <a href="#">Carpeta de Archivos</a>
         </div>
     </header>
     <br>
-    
-<div class = "bodyContainer">
 
-    <div class = "SectionL">
+    <div class="bodyContainer">
 
-<!-- Aqui se ingresan los datos para llenar la primera parte de la tabla.-->
-<div class = "formSection">
-    <div class="Tittle">
-        <h4>Información</h4>
-        <p>Agregue los datos que se solicitan para llenar la tabla.</p>
+        <div class="SectionL">
+
+            <!-- Aqui se ingresan los datos para llenar la primera parte de la tabla.-->
+            <div class="formSection">
+                <div class="Tittle">
+                    <h4>Información</h4>
+                    <p>Agregue los datos que se solicitan para llenar la tabla.</p>
+                </div>
+
+                <table></table>
+                <form method="POST" name="sample" class="FormCalc">
+                    <br>
+                    <table>
+                        <tr>
+                            <td><label for="numero">Número:</label></td>
+                            <td><input id="numero" type="number" name="numero"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="anio">Año: </label></td>
+                            <td>
+                                <select id="anio" name="anio">
+                                    <option disabled selected="">Seleccione el año</option>
+                                    <option>2023</option>
+                                    <option>2024</option>
+                                    <option>2025</option>
+                                    <option>2026</option>
+                                    <option>2027</option>
+                                    <option>2028</option>
+                                    <option>2029</option>
+                                    <option>2030</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="nombre">Nombre: </label></td>
+                            <td><input id="nombre" type="text" name="nombre"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="descrip">Descripción: </label></td>
+                            <td><textarea name="descrip" rows="5" cols="21"
+                                    placeholder="Escriba su descripción aquí."></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="voltaje">Voltaje: </label></td>
+                            <td>
+                                <select name="voltaje">
+                                    <option disabled selected="">Seleccione el voltaje</option>
+                                    <option>13</option>
+                                    <option>33</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="Semiaislado">Semiaislado: </label></td>
+                            <td>
+                                <select name="semiAis">
+                                    <option disabled selected="">Seleccione una opción</option>
+                                    <option>Si</option>
+                                    <option>No</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="pesado">Pesado: </label></td>
+                            <td>
+                                <select name="pesado">
+                                    <option disabled selected="">Seleccione una opción</option>
+                                    <option>Si</option>
+                                    <option>No</option>
+                                </select>
+
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="AddDataButton">
+                        <input type="button" id="botonAgregar" name="add" value="Agregar datos" onclick="addData();"
+                            class="">
+                    </div>
+                    <br>
+
+                    <!-- Aqui se selccionan los dispositivos -->
+                    <label>Dispositivos: </label><select name="selecDispo" id="selecDispositivo"
+                        onchange="agregarDis(this.value);deshabilitarOpcionSeleccionada(this)"><br>
+                        <option disabled selected="">Seleccione un Dispositivo</option>
+                        <optgroup label="Media Tension">
+                            <option>Primero</option>
+                            <option>Segundo</option>
+                            <option>Tercero</option>
+                        <optgroup label="Baja Tensión">
+                            <option>Primero2</option>
+                            <option>Segundo2</option>
+                            <option>Tercero2</option>
+                    </select>
+                    <br><br>
+
+            </div>
+        </div>
+
+        <!-- Aqui termina la caja izquierda -->
+        <div class="SectionR">
+            <div>
+                <div class="Tittle" style="width: 500px;">
+                    <h4>Información</h4>
+                    <p>La informacion agragada se verá reflejada en la siguiente tabla, los datos pueden ser editados o
+                        eliminados.</p>
+                </div>
+                <br>
+                <!-- Aqui se crea la tabla principal -->
+                <table id="tbl" class="TableData">
+
+                    <thead>
+                        <tr>
+                            <th colspan="2">Cálculo de material.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <br>
+                <input type="button" name="button" id="excel_btn" value="Convertir a Excel"
+                    onclick="htmlTableToExcel('xlsx')" class="">
+            </div>
+        </div>
+
+
+
     </div>
+    <script type="text/javascript" src="./assets/javaScript/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
 
-    <table></table>
-<form method="POST" name="sample" class="FormCalc">
-<br>
-<table>
-    <tr>
-      <td><label for="numero">Número:</label></td>
-      <td><input id="numero" type="number" name="numero"></td>
-    </tr>
-    <tr>
-      <td><label for="anio">Año: </label></td>
-      <td>
-        <select id="anio" name="anio">
-            <option disabled selected="">Seleccione el año</option>
-            <option>2023</option>
-            <option>2024</option>
-            <option>2025</option>
-            <option>2026</option>
-            <option>2027</option>
-            <option>2028</option>
-            <option>2029</option>
-            <option>2030</option>
-        </select>
-    </td>
-    </tr>
-    <tr>
-      <td><label for="nombre">Nombre: </label></td>
-      <td><input id="nombre" type="text" name="nombre"></td>
-    </tr>
-    <tr>
-        <td><label for="descrip">Descripción: </label></td>
-        <td><textarea  name="descrip" rows="5" cols="21" placeholder="Escriba su descripción aquí."></textarea></td>
-      </tr>
-      <tr>
-        <td><label for="voltaje">Voltaje: </label></td>
-        <td>
-            <select name="voltaje">
-                <option disabled selected="">Seleccione el voltaje</option>
-                <option>13</option>
-                <option>33</option>
-            </select>
-        </td>
-      </tr>
-      <tr>
-        <td><label for="Semiaislado">Semiaislado: </label></td>
-        <td>
-            <select name="semiAis">
-                <option disabled selected="">Seleccione una opción</option>
-                <option>Si</option>
-                <option>No</option>
-            </select>
-        </td>
-      </tr>
-      <tr>
-        <td><label for="pesado">Pesado: </label></td>
-        <td>
-            <select name="pesado">
-                <option disabled selected="">Seleccione una opción</option>
-                <option>Si</option>
-                <option>No</option>
-            </select>
-            
-        </td>
-      </tr>
-  </table>
-
-<div class = "AddDataButton">
-    <input type="button" id="botonAgregar" name="add" value="Agregar datos" onclick="addData();" class = "">
-</div>
-<br>
-
-<!-- Aqui se selccionan los dispositivos -->
-<label>Dispositivos: </label><select name="selecDispo" id="selecDispositivo" onchange="agregarDis(this.value);deshabilitarOpcionSeleccionada(this)"><br>
-                    <option disabled selected="">Seleccione un Dispositivo</option>
-                    <optgroup label="Media Tension">
-                    <option>Primero</option>
-                    <option>Segundo</option>
-                    <option>Tercero</option>
-                    <optgroup label="Baja Tensión">
-                    <option>Primero2</option>
-                    <option>Segundo2</option>
-                    <option>Tercero2</option>
-                </select>
-    <br><br>
-    
-</div>
-    </div> 
-
-<!-- Aqui termina la caja izquierda -->
-    <div class = "SectionR">
-        <div>
-<div class = "Tittle" style="width: 500px;">
-    <h4>Información</h4>
-    <p>La informacion agragada se verá reflejada en la siguiente tabla, los datos pueden ser editados o eliminados.</p>
-</div>
-    <br>
-            <!-- Aqui se crea la tabla principal -->
-            <table id="tbl" class = "">
-                
-                <thead>
-                    <tr>
-                        <th colspan="2">Cálculo de material.</th>
-                    </tr>
-               </thead>
-                <tbody>
-                </tbody>
-             </table>
-    <br>
-    <input type="button" name="button" id="excel_btn" value="Convertir a Excel" onclick="htmlTableToExcel('xlsx')" class = "">
-</div>
-</div>
-
-
-
-</div>
-<script type="text/javascript" src="./assets/javaScript/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    </body>
-    
 </html>

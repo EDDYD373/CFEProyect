@@ -137,8 +137,8 @@ document.getElementById("excel_btn").disabled = true;
         td2.innerHTML.name= cantidadT;
         td1.innerHTML.id = nombreT;
         td2.innerHTML.id = cantidadT;
-        td3.innerHTML='<input type="button" name="del" value="Eliminar" onclick="delStudent(this);" class = "">';
-        td4.innerHTML='<input type="button" name="up" value="Actualizar" onclick="actualizar(this);" class = "">';
+        td3.innerHTML='<input type="button" name="del" value="Eliminar" onclick="delStudent(this);" class = "Deletebutton">';
+        td4.innerHTML='<input type="button" name="up" value="Actualizar" onclick="actualizar(this);" class = "UpdateButton">';
         
         document.getElementById("tbl").appendChild(tr);
 
@@ -174,10 +174,10 @@ document.getElementById("excel_btn").disabled = true;
         var td3 = tr.appendChild(document.createElement('td'));
         var td4 = tr.appendChild(document.createElement('td'));
 
-        td1.innerHTML='<input type="text" name="nombre1">';
+        td1.innerHTML='<input type="text" name="nombre1" style = "margin: 0;">';
         td2.innerHTML='<input type="number" name="cantidad1">';
-        td3.innerHTML='<input type="button" name="del" value="Eliminar" onclick="delStudent(this);" class = "">'
-        td4.innerHTML='<input type="button" name="up" value="Guardar" onclick="agregarAct(this);" class = "">'
+        td3.innerHTML='<input type="button" name="del" value="Eliminar" onclick="delStudent(this);" class = "Deletebutton">'
+        td4.innerHTML='<input type="button" name="up" value="Guardar" onclick="agregarAct(this);" class = "successButton">'
 
         document.getElementById("tbl").replaceChild(tr, s);
     }

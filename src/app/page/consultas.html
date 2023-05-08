@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <title>Consultas</title>
+</head>
+<body>
+    <br>
+    <header class="header">
+        <div class="logo">
+            <img src="cfe.png" alt="logo de la empresa">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Cál. Material</a></li>
+                <li><a href="consultas.html">Consultas</a></li>
+                <li><a href="dispositivos.html">Dispositivos</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn"><button>Carpeta de Archivos</button></a>
+    </header>
+    <br>
+
+    <div class="callout callout-info">
+        <h4>Información</h4>
+        <p>En este apartado se puede ver y filtrar los archivos previamente creados.</p>
+    </div>
+
+    <br>
+
+
+    <form class="search-form">
+        <input class="search-input" type="search" placeholder="Buscar...">
+        <button class="search-btn" type="submit"><i class="fa fa-search"></i>Buscar</button>
+      </form>
+      <br>
+            <!-- Aqui se crea la tabla principal -->
+            <table id="tbl" class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2">No.</th>
+                        <th colspan="2">Nombre</th>
+                        <th colspan="2">Año</th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">1</td>
+                        <td colspan="2">Nombre de obra 1</td>
+                        <td colspan="2">2023</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">2</td>
+                        <td colspan="2">Nombre de obra 2</td>
+                        <td colspan="2">2023</td>
+                    </tr>
+               </thead>
+                <tbody>
+                </tbody>
+             </table>
+    <br>
+
+    <nav>
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Siguiente</a>
+          </li>
+        </ul>
+      </nav>
+
+</body>
+</html>

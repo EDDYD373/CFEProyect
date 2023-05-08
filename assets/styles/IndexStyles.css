@@ -65,4 +65,107 @@
     color: var(--color-black);
     font-weight: bold;
 }
-/* fin header */
+/* fin header inicio de booy*/
+.bodyContainer
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;  
+}
+.SectionL
+{
+    height: 100%;
+    width: 40%;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+.formSection
+{
+    border-right: 2px solid var(--color-secundario);
+}
+.Tittle
+{
+    margin-right: 40px;
+    padding: 10px;
+    background-color: var(--color-terciario);
+    height: auto;
+    border-left: 5px solid var(--color-primario);
+}
+.FormTittle h4
+{
+    font-weight: bold;
+    color: var(--color-black);
+}
+.SectionR
+{
+    height: 100%;
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+.FormCalc
+{
+    margin: 10px 20px 10px 0px;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid var(--color-white-secundario);
+    border-radius: 5px;
+}
+.FormCalc
+{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.FormCalc input[type="text"],
+input[type="email"],
+textarea {
+  width: 235px;
+  padding: 10px;
+  border: 1px solid var(--color-white-secundario);
+  border-radius: 3px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1;
+}
+.FormCalc select {
+    width: 255px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-white-secundario);
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-grey);
+    background-color: var(--color-white);
+  }
+  .FormCalc input[type=number] {
+    width: 235px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-white-secundario);
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-grey);
+    background-color: var(--color-white);
+  }
+  .AddDataButton input[type="button"] {
+    background-color: var(--color-success);
+    border: none;
+    color: var(--color-white);
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .AddDataButton input[type="button"]:hover {
+    background-color: var(--color-success-black);
+  }
+  

@@ -75,17 +75,25 @@ select
   /*diseño de tabla*/
   .TableData {
     border-collapse: collapse;
-    width: 557px;
+    width: 100%;
+
   }
   
-  .TableData th,
-  .TableData td {
+  .TableData td,
+  .TableData th {
+    border: 1px solid var(--color-secundario);
     padding: 8px;
-    text-align: left;
-    background-color: var(--color-white-secundario);
+    text-align: center;
   }
   
   .TableData th {
+    padding-top: 12px;
+    padding-bottom: 12px;
     background-color: var(--color-secundario);
-    color: var(--color-white);
+    color: var(--color-white-secundario);
   }
+  
+  .TableData tr {
+    background-color: var(--color-white-secundario);
+  }
+  

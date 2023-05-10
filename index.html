@@ -51,13 +51,13 @@
                     <br>
                     <table>
                         <tr>
-                            <td><label for="numero">Número:</label></td>
-                            <td><input id="numero" type="number" name="numero"></td>
+                            <td><label for="Number">Número:</label></td>
+                            <td><input id="Number" type="number" ></td>
                         </tr>
                         <tr>
-                            <td><label for="anio">Año: </label></td>
+                            <td><label for="Year">Año: </label></td>
                             <td>
-                                <select id="anio" name="anio">
+                                <select id="Year">
                                     <option disabled selected="">Seleccione el año</option>
                                     <option>2023</option>
                                     <option>2024</option>
@@ -71,18 +71,18 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><label for="nombre">Nombre: </label></td>
-                            <td><input id="nombre" type="text" name="nombre"></td>
+                            <td><label for="Name">Nombre: </label></td>
+                            <td><input id="Name" type="text"></td>
                         </tr>
                         <tr>
-                            <td><label for="descrip">Descripción: </label></td>
-                            <td><textarea name="descrip" rows="5" cols="21"
+                            <td><label for="description">Descripción: </label></td>
+                            <td><textarea id="description" rows="5" cols="21"
                                     placeholder="Escriba su descripción aquí."></textarea></td>
                         </tr>
                         <tr>
-                            <td><label for="voltaje">Voltaje: </label></td>
+                            <td><label for="Voltage">Voltaje: </label></td>
                             <td>
-                                <select name="voltaje">
+                                <select id ="Voltage">
                                     <option disabled selected="">Seleccione el voltaje</option>
                                     <option>13</option>
                                     <option>33</option>
@@ -90,9 +90,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><label for="Semiaislado">Semiaislado: </label></td>
+                            <td><label for="SemiIsolsted">Semiaislado: </label></td>
                             <td>
-                                <select name="semiAis">
+                                <select id="SemiIsolsted">
                                     <option disabled selected="">Seleccione una opción</option>
                                     <option>Si</option>
                                     <option>No</option>
@@ -100,9 +100,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><label for="pesado">Pesado: </label></td>
+                            <td><label for="Heavy">Pesado: </label></td>
                             <td>
-                                <select name="pesado">
+                                <select id="Heavy">
                                     <option disabled selected="">Seleccione una opción</option>
                                     <option>Si</option>
                                     <option>No</option>
@@ -119,9 +119,9 @@
                     <br>
 
                     <!-- Aqui se selccionan los dispositivos -->
-                    <label>Dispositivos: </label><select name="selecDispo" id="selecDispositivo"
-                        onchange="agregarDis(this.value);deshabilitarOpcionSeleccionada(this)"><br>
-                        <option disabled selected="">Seleccione un Dispositivo</option>
+                    <label>Dispositivos: </label><select name="selecDispo" id="selectDevice"
+                        onchange="addDevice(this.value)"><br>
+                        <option disabled selected="" hidden>Seleccione un Dispositivo</option>
                         <optgroup label="Media Tension">
                             <option>Primero</option>
                             <option>Segundo</option>

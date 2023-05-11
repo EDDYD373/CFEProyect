@@ -38,7 +38,6 @@
     padding-left: 70px;
     width: 55%;
     height: 100%;
-    border-right: 2px solid var(--color-secundario);
     display: flex;
     justify-content: flex-start;
 }

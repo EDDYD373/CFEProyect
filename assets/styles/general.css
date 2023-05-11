@@ -77,6 +77,7 @@ img
 }
 input[type="text"],
 input[type="email"],
+input[type="search"],
 textarea {
   padding: 10px;
   border: 1px solid var(--color-white-secundario);
@@ -125,4 +126,8 @@ input[type="button"] {
   .successButton
   {
     background-color: var(--color-success) !important;
+  }
+  .successButton:hover
+  {
+    background-color: var(--color-success-dark) !important;
   }

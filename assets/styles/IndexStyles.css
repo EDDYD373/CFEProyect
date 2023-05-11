@@ -28,7 +28,7 @@
     height: auto;
     border-left: 5px solid var(--color-primario);
 }
-.FormTittle h4
+.Tittle h4
 {
     font-weight: bold;
     color: var(--color-black);
@@ -94,6 +94,6 @@ select
   }
   
   .TableData tr {
-    background-color: var(--color-white-secundario);
+    background-color: #ecf2ff;
   }
   

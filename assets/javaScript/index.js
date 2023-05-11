@@ -139,12 +139,8 @@ function delStudent(Stud) {
 
 /*Codigo para convertir en EXCEL*/
 function htmlTableToExcel(type) {
-    var numero = document.getElementById("numero").value;
-    var anio = document.getElementById("anio").value;
-    var nombre = document.getElementById("nombre").value;
-    var nombreArchivo = (numero + '_' + anio + '_' + nombre)
-    var data = document.getElementById("tbl");
-    var excelFile = XLSX.utils.table_to_book(data, { sheet: "sheet1" });
+    var nombreArchivo = (inputNumber.value + '_' + selectYear.value + '_' + inputName.value)
+    var excelFile = XLSX.utils.table_to_book(TableCalc, { sheet: "sheet1" });
     XLSX.write(excelFile, { bookType: type, bookSST: true, type: 'base64' });
     XLSX.writeFile(excelFile, nombreArchivo + '.' + type);
 }
